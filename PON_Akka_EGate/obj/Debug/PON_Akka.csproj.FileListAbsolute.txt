@@ -1,0 +1,14 @@
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\bin\Debug\Akka.dll
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\bin\Debug\Newtonsoft.Json.dll
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\bin\Debug\System.Collections.Immutable.dll
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\bin\Debug\Akka.xml
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\bin\Debug\Newtonsoft.Json.xml
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\bin\Debug\System.Collections.Immutable.xml
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\obj\Debug\PON_Akka.csprojAssemblyReference.cache
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\obj\Debug\PON_Akka.csproj.CoreCompileInputs.cache
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\obj\Debug\PON_Akka.csproj.CopyComplete
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+D:\Doutorado\Fase3\PON_Akka\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
