@@ -7,7 +7,6 @@ D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\bin\Debug\System.Collections.Immutabl
 D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\bin\Debug\Akka.xml
 D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\bin\Debug\Newtonsoft.Json.xml
 D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\bin\Debug\System.Collections.Immutable.xml
-D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\obj\Debug\PON_Akka_EGate.csprojAssemblyReference.cache
 D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\obj\Debug\PON_Akka_EGate.csproj.CoreCompileInputs.cache
 D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\obj\Debug\PON_Akka_EGate.csproj.CopyComplete
 D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\obj\Debug\PON_Akka_EGate.exe

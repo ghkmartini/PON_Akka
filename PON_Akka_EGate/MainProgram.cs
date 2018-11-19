@@ -64,9 +64,6 @@ namespace NOP_Actors
             int i = 4;
             while((i--) > 0) FBERemoteControlActor.Tell(RemoteControlState.ButtonPress);
 
-            //Tells to shut down the actor system
-            FBERemoteControlActor.Tell(RemoteControlState.End);
-
             //Blocks the main thread from exiting until the actor system is shut down
             NOPActorSystem.WhenTerminated.Wait();
 

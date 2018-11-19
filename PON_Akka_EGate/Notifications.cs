@@ -42,8 +42,7 @@ namespace NOP_Actors
     {
         ButtonPress,
         ChangeComplete,
-        Off,
-        End
+        Off
     }
 
     enum GateAction
