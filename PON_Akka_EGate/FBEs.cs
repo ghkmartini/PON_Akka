@@ -114,7 +114,7 @@ namespace NOP_Actors
 
         private void Crc32_many_times()
         {
-            for (int i = 0; i < 3000000; i++) Crc32_byte(ref buffer, 50);
+            for (int i = 0; i < (3000000/2); i++) Crc32_byte(ref buffer, 50);
         }
                                  
         private void MethodCloseGate()
@@ -187,12 +187,10 @@ namespace NOP_Actors
                 case GateAction.Close:
                     MethodCloseGate();
                     Crc32_many_times();
-                    Crc32_many_times();
                     break;
 
                 case GateAction.Open:
                     MethodOpenGate();
-                    Crc32_many_times();
                     Crc32_many_times();
                     break;
             }
@@ -306,7 +304,7 @@ namespace NOP_Actors
 
         private void Crc32_many_times()
         {
-            for (int i = 0; i < 3000000; i++) Crc32_byte(ref buffer, 50);
+            for (int i = 0; i < (3000000/2); i++) Crc32_byte(ref buffer, 50);
         }
 
         private void MethodClearEvent()
@@ -393,7 +391,6 @@ namespace NOP_Actors
 
                 case RemoteControlState.Off:
                     remoteControlOffLatch = true;
-                    Crc32_many_times();
                     CheckChangeCompleteLatch();
                     break;
             }

@@ -11,3 +11,4 @@ D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\obj\Debug\PON_Akka_EGate.csproj.CoreC
 D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\obj\Debug\PON_Akka_EGate.csproj.CopyComplete
 D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\obj\Debug\PON_Akka_EGate.exe
 D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\obj\Debug\PON_Akka_EGate.pdb
+D:\Doutorado\Fase3\PON_Akka\PON_Akka_EGate\obj\Debug\PON_Akka_EGate.csprojAssemblyReference.cache
