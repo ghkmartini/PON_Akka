@@ -114,7 +114,7 @@ namespace NOP_Actors
 
         private void Crc32_many_times()
         {
-            for (int i = 0; i < (3000000/2); i++) Crc32_byte(ref buffer, 50);
+            for (int i = 0; i < GlobalVar.CRC_32_LOAD_K; i++) Crc32_byte(ref buffer, 50);
         }
                                  
         private void MethodCloseGate()
@@ -304,7 +304,7 @@ namespace NOP_Actors
 
         private void Crc32_many_times()
         {
-            for (int i = 0; i < (3000000/2); i++) Crc32_byte(ref buffer, 50);
+            for (int i = 0; i < GlobalVar.CRC_32_LOAD_K; i++) Crc32_byte(ref buffer, 50);
         }
 
         private void MethodClearEvent()

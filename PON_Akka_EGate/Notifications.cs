@@ -7,6 +7,11 @@ using Akka.Actor;
 
 namespace NOP_Actors
 {
+    public static class GlobalVar
+    {
+        public const int CRC_32_LOAD_K = (3000000 / 2);
+    }
+
     enum ActorRefType
     {
         FBEGateRef,
