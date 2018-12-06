@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Akka.Actor;
 
 namespace NOP_Actors
-{
+{ 
     class Program
     {
         public static ActorSystem NOPActorSystem;
@@ -20,6 +20,30 @@ namespace NOP_Actors
             //Start the actor system
             NOPActorSystem = ActorSystem.Create("NOPActorSystem");
 
+            int amount = 3000;
+
+            IActorRef[] ActorRefArray = new IActorRef[amount];
+
+            for(int it = 0; it < amount; it++)
+            {
+                ActorRefArray[it] = NOPActorSystem.ActorOf(Props.Create(() => new ConditionStateChanged()), "Actor" + it.ToString());
+
+                if(it >= 2 && (it%2) == 0)
+                {
+                    var ActorAnswer1 = ActorRefArray[it].Ask(new ActorReference(ActorRefType.FBERemoteControlRef, ActorRefArray[it-1]));
+                    var ActorAnswer2 = ActorRefArray[it-1].Ask(new ActorReference(ActorRefType.FBERemoteControlRef, ActorRefArray[it - 2]));
+
+                    ActorAnswer1.Wait();
+                    ActorAnswer2.Wait();
+                }
+            }
+
+            for (int it = 0; it < amount; it++)
+            {
+                if (it >= 2 && (it % 2) == 0) ActorRefArray[it].Tell(ConditionAction.SendTrue);
+            }
+
+            /*
             //Build up all actors
             IActorRef FBEGateActor               = NOPActorSystem.ActorOf(Props.Create(() => new FBEGate()),               "FBEGateActor");
             IActorRef FBERemoteControlActor      = NOPActorSystem.ActorOf(Props.Create(() => new FBERemoteControl()),      "FBERemoteControlActor");
@@ -63,9 +87,11 @@ namespace NOP_Actors
             //ActionTriggers
             int i = 4;
             while((i--) > 0) FBERemoteControlActor.Tell(RemoteControlState.ButtonPress);
+            */
 
             //Blocks the main thread from exiting until the actor system is shut down
-            NOPActorSystem.WhenTerminated.Wait();
+            //NOPActorSystem.WhenTerminated.Wait();
+            while (GlobalVar.global_crc_count < amount);
 
             //Stop the watch timer
             watch.Stop();

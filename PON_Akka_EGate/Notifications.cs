@@ -9,7 +9,8 @@ namespace NOP_Actors
 {
     public static class GlobalVar
     {
-        public const int CRC_32_LOAD_K = (3000000 / 2);
+        public const int CRC_32_LOAD_K = 3000;
+        public static int global_crc_count = 0;
     }
 
     enum ActorRefType

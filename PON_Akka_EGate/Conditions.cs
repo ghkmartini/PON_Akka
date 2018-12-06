@@ -422,15 +422,16 @@ namespace NOP_Actors
             if (message is ActorReference)
             {
                 var temp = message as ActorReference;
-                if (temp.ActorRefID == ActorRefType.FBERemoteControlRef) SetFBERemoteControl(temp.Ref);
+                SetFBERemoteControl(temp.Ref);
 
                 Sender.Tell(true);
             }
             else switch (message)
             {
-                case ConditionAction.SendFalse:
-                    if (!_FBERemoteControlRef.IsNobody()) _FBERemoteControlRef.Tell(RemoteControlState.Off);
+                case ConditionAction.SendTrue:
+                    if (!_FBERemoteControlRef.IsNobody()) _FBERemoteControlRef.Tell(ConditionAction.SendTrue);
                     Crc32_many_times();
+                    GlobalVar.global_crc_count++;
                     break;
             }
         }
