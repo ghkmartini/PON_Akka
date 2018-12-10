@@ -20,27 +20,32 @@ namespace NOP_Actors
             //Start the actor system
             NOPActorSystem = ActorSystem.Create("NOPActorSystem");
 
-            int amount = 3000;
+            int amount = 7200;
 
             IActorRef[] ActorRefArray = new IActorRef[amount];
 
-            for(int it = 0; it < amount; it++)
+            Task<object> ActorAnswer1 = null;
+            Task<object> ActorAnswer2 = null;
+
+            for (int it = 0; it < amount; it++)
             {
                 ActorRefArray[it] = NOPActorSystem.ActorOf(Props.Create(() => new ConditionStateChanged()), "Actor" + it.ToString());
 
-                if(it >= 2 && (it%2) == 0)
+                if ((it + 1) >= 3 && ((it + 1) % 3) == 0)
                 {
-                    var ActorAnswer1 = ActorRefArray[it].Ask(new ActorReference(ActorRefType.FBERemoteControlRef, ActorRefArray[it-1]));
-                    var ActorAnswer2 = ActorRefArray[it-1].Ask(new ActorReference(ActorRefType.FBERemoteControlRef, ActorRefArray[it - 2]));
-
-                    ActorAnswer1.Wait();
-                    ActorAnswer2.Wait();
+                    if (ActorAnswer1 != null && ActorAnswer2 != null)
+                    {
+                        ActorAnswer1.Wait();
+                        ActorAnswer2.Wait();
+                    }
+                    ActorAnswer1 = ActorRefArray[it].Ask(new ActorReference(ActorRefType.FBERemoteControlRef, ActorRefArray[it-1]));
+                    ActorAnswer2 = ActorRefArray[it-1].Ask(new ActorReference(ActorRefType.FBERemoteControlRef, ActorRefArray[it - 2])); 
                 }
             }
 
             for (int it = 0; it < amount; it++)
             {
-                if (it >= 2 && (it % 2) == 0) ActorRefArray[it].Tell(ConditionAction.SendTrue);
+                if ((it + 1) >= 3 && ((it + 1) % 3) == 0) ActorRefArray[it].Tell(ConditionAction.SendTrue);
             }
 
             /*
